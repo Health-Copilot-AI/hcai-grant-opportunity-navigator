@@ -1,0 +1,25 @@
+# Railway Configuration for GrantFlow Navigator
+# https://docs.railway.com/reference/config-as-code
+
+[build]
+builder = "NIXPACKS"
+buildCommand = "npm ci && npm run build"
+watchPatterns = [
+  "app/**",
+  "components/**",
+  "lib/**",
+  "data/**",
+  "public/**",
+  "package.json",
+  "package-lock.json",
+  "next.config.js",
+  "tailwind.config.js"
+]
+
+[deploy]
+startCommand = "npm run start"
+healthcheckPath = "/api/health"
+healthcheckTimeout = 120
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 3
+numReplicas = 1
