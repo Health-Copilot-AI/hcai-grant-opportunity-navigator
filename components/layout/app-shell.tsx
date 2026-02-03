@@ -14,14 +14,13 @@ export function AppShell({ children }: AppShellProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
 
-  // Initialize theme from localStorage or system preference
+  // Initialize theme from localStorage (default: light)
   useEffect(() => {
     const stored = localStorage.getItem('theme');
     if (stored === 'dark' || stored === 'light') {
       setTheme(stored);
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      setTheme('dark');
     }
+    // Note: Removed system preference check to default to light theme
   }, []);
 
   // Apply theme to document
