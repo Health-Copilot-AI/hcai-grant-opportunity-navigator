@@ -1,5 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Serve app at /grant-opportunities path
+  basePath: '/grant-opportunities',
   experimental: {
     serverComponentsExternalPackages: ['js-yaml', 'gray-matter', 'papaparse'],
   },

@@ -18,7 +18,7 @@ watchPatterns = [
 
 [deploy]
 startCommand = "npm run start"
-healthcheckPath = "/api/health"
+healthcheckPath = "/grant-opportunities/api/health"
 healthcheckTimeout = 120
 restartPolicyType = "ON_FAILURE"
 restartPolicyMaxRetries = 3
